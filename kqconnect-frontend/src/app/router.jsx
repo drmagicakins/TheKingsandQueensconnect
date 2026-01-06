@@ -27,6 +27,13 @@ export const router = createBrowserRouter([
             <Dashboard />
           </ProtectedRoute>
         ),
+        children: [
+          { path: "members", element: <Members /> },
+          { path: "birthdays", element: <Birthdays /> },
+          { path: "messages", element: <AdminMessages /> },
+          { path: "ads", element: <AdminAds /> },
+          { path: "policies", element: <Policies /> },
+        ],
       },
     ],
   },

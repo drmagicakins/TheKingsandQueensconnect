@@ -24,6 +24,7 @@ export default function Navbar() {
             <Link to="/register">Join</Link>
           </>
         )}
+        <BirthdayBadge isToday={user.is_today} />
       </div>
     </nav>
   );
