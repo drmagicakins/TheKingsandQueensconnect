@@ -9,10 +9,9 @@ export default function Home({ marqueeItems }) {
     <div className="space-y-6">
       <SmartMarquee items={marqueeItems} />
 
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">
-          The Kings & Queens Connect
-        </h1>
+      <div className="flex items-center justify-between">
+        <Link to="/my-ads">My Ads</Link>
+        <h1 className="text-2xl font-bold">The Kings & Queens Connect</h1>
         <OnlineBadge />
       </div>
 

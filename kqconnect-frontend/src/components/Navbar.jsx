@@ -6,7 +6,7 @@ export default function Navbar() {
   const { user, logout } = useAuthStore();
 
   return (
-    <nav className="bg-white shadow px-6 py-3 flex justify-between">
+    <nav className="flex justify-between px-6 py-3 bg-white shadow">
       <Link to="/" className="font-bold">
         Kings & Queens Connect
       </Link>
@@ -15,6 +15,25 @@ export default function Navbar() {
         {user ? (
           <>
             <Link to="/threads">Discussions</Link>
+            <Route
+              path="/community"
+              element={
+                <ProtectedRoute>
+                  <Community />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="/community/thread/:id"
+              element={
+                <ProtectedRoute>
+                  <CommunityLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route index element={<ThreadDetail />} />
+            </Route>
+
             {user.is_admin && <Link to="/admin">Admin</Link>}
             <button onClick={logout}>Logout</button>
           </>

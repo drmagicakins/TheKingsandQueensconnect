@@ -5,8 +5,8 @@ export default function OnlineBadge() {
   const count = useOnlineUsers();
 
   return (
-    <div className="text-sm text-green-600 font-medium">
-      ● {count} members online
+    <div className="text-sm font-medium text-green-400">
+      🟢 {count} members online
     </div>
   );
 }
